@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+.btn-primary {
+    background-color: #F47522 !important; 
+    color: #fff !important;
+    border: none !important;
+ }
 
 body {
     margin: 0;
@@ -9,38 +14,29 @@ body {
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #ffffff;
-    margin: 0;
-    z-index: 1000;
-    box-shadow: 0px 3px 6px #C1C3C736;
-    padding: 5px 0;
+    background-color: #ffffff !important;
+    box-shadow: 0px 7px 15px #ebebeb43;
+    padding: 20px !important;
 }
 
-.navbar .content {
-    max-width: 1220px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px auto;
+@media (min-width: 1099px){
+    .navbar-collapse {
+        flex: none !important;
+    }
 }
 
-.navbar .content .nav-link a {
-    color: #19345E;
-    text-decoration: none;
-    margin-left: 40px;
+.nav-link {
+    color: #19345E !important;
     font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
+    margin-left: 30px;
 }
 
-.navbar .content .nav-link a.active {
-    color: #F47522;
+.nav-link.active {
+    color: #F47522 !important;
+}
+
+button.navbar-toggler {
+    color: #19345E !important;
 }
 
 .page {
@@ -125,8 +121,7 @@ body {
     position: relative;
     max-width: 1220px;
     margin: 30px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    
 }
 
 .abouts .content .identity ul {
@@ -153,6 +148,10 @@ body {
     width: 150px;
     object-fit: cover;
 }
+
+.abouts .content p {
+    line-height: 25px;
+}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -160,86 +159,103 @@ table, th, td {
 }
 
 .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100vw;
 }
 
 .contact .image {
+    width: 90%;
+    height: 100vh;
     position: relative;
-    height: 100vh;
-}
-
-.contact .image .image-logo {
-    position: absolute;
-    top: 40vh;
-    left: 30%;
-    height: 100px;
-    object-fit: cover;
-    z-index: 5;
-}
-
-.contact .image .back {
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
-}
-.contact .image .backdrop {
-    position: absolute;
-    top: 0;
-    width: 90%;
-    height: 100vh;
-    background-color: #19345E;
-    opacity: 0.5;
-    z-index: 2;
-}
-
-.contact .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 100px;
-}
-
-.contact .content h3{
-    font-size: 22px;
     margin: 0;
 }
 
-.contact .content label{
-    display: block;
-    margin-top: 20px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.contact .content label::after{
-   content: '*';
-   color: red;
-}
-
-.contact .form-control {
-    padding:  15px;
-    color: #19345E;
-    border: 2px solid #d0d0d0;
-    border-radius: 8px;
-    margin-top: 5px;
-}
-
-.contact .form-control:focus {
-    border: 2px solid #19345E;
+.contact .image-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .contact textarea {
-    height: 70px;
+    height: 150px;
+}
+
+@media (max-width: 767px){
+    .contact .field {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1099px){
+    .contact .field {
+        padding: 10px 20px 10px 0px;
+    }
+    .contact .image-logo {
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        z-index: 100;
+    }
+    .contact .image .backDrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #19345E;
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+}
+
+@media (min-width: 1099px){
+    .contact .field {
+        padding: 0 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    .contact .image-logo {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        z-index: 100;
+    }
+
+    .contact .image .backDrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #19345E;
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+}
+
+.contact h3 {
+    color: #19345E;
+}
+
+.contact label {
+    margin-top: 10px;
+    color: #19345E;
+}
+
+.contact .star::after {
+    content: '*';
+    color: red;
+}
+
+.contact input {
+    margin-top: 5px;
 }
 
 .contact .btn {
-    background: #F47522;
-    padding:  10px 20px;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
     margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
 }
 
 .experience {
@@ -268,17 +284,10 @@ table, th, td {
     margin-top: 30px;
 }
 
-.experience .content .filled {
-    position: relative;
-    max-width: 960px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 50px auto;
-}
-
 .experience .content .line {
     position: relative;
-    border-left: 3px solid #eeeeee;
+    border-left: 3px solid #e7e7e7;
+    height: 100%;
 }
 .experience .content .dotted {
     position: absolute;
@@ -290,17 +299,47 @@ table, th, td {
     width: 15px;
 }
 
+@media (max-width: 767px){
+    .experience .content .card h4 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .experience .content .card .text-muted {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .experience .content .card p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 1099px) and (min-width: 768px){
+    .experience .content .card h4 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .experience .content .card .text-muted {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .experience .content .card p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
 .experience .content .card {
     border: 2px solid #E2E2E2;
     padding: 5px 20px;
     border-radius: 8px;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .experience .content .card.active {
     border: 2px solid #E2E2E2;
     padding: 5px 20px;
     border-radius: 8px;
-    margin-top: 30px;
     box-shadow: 0px 7px 15px #C3C3C343;
 }
 .experience .content .card h4{
@@ -312,34 +351,42 @@ table, th, td {
     padding-bottom: 5px;
     border-bottom: 2px solid #eeeeee;
 }
+
 footer {
-    height: 141px;
     margin-top: 150px;
     background-color: #19345E;
     color: #fff;
-}
-
-footer .content {
-    max-width: 1220px;
-    height: 100%;
-    margin:  10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 footer .content img {
     width: 150px;
 }
 
-footer .content .copyright {
-    padding-left: 150px;
-    border-left: 1px solid #F4F7FC;
+footer .foot {
+    align-items: center;
+    padding: 40px 0;
+    min-height: 100px;
 }
 
-footer .content .sosial-media {
-    padding-left: 150px;
+@media (max-width: 991px) {
+    footer .content .copyright {
+        padding-left: 0;
+    }
+    footer .content .sosial-media {
+        padding-left: 0;
+    }
 }
+
+@media (min-width: 991px) {
+    footer .content .copyright {
+        padding-left: 150px;
+        border-left: 1px solid #F4F7FC;
+    }
+    footer .content .sosial-media {
+        padding-left: 70px;
+    }
+}
+
 
 footer .content .sosial-media img {
     width: 20px;
